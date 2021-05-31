@@ -5,7 +5,7 @@ import java.security.NoSuchAlgorithmException;
 
 import javax.xml.bind.DatatypeConverter;
 
-public class EncryptUtils {
+public class EncryptUtil {
     public static String getPasswordEncypt(String plain_p, String pepper) {
         String ret = "";
 
