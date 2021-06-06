@@ -152,3 +152,7 @@ table#report_lsit .repor_ttitle{
 table#report_lisy .report_acstion{
     width:13%
 }
+
+pre {
+    font-family: "Hiragino Kaku Gothic Pro",Meiryo,"MS PGothic",Helvetica,Arial,sans-serif;
+}
