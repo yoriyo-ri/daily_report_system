@@ -14,25 +14,27 @@ public class ReportValidator {
             errors.add(title_error);
         }
 
-
         String content_error = _validateContent(r.getContent());
-        if (!content_error.equals("")) {
+        if(!content_error.equals("")) {
             errors.add(content_error);
         }
+
         return errors;
     }
 
-private static String _validateTitle(String title){
-    if(title ==null || title.equals("")){
-        return "タイトルを入力してください。";
+    private static String _validateTitle(String title) {
+        if(title == null || title.equals("")) {
+            return "タイトルを入力してください。";
+            }
+
+        return "";
     }
-    return "";
-}
 
     private static String _validateContent(String content) {
-        if (content == null || content.equals("")) {
-            return "内容を入力して下さい。";
-        }
+        if(content == null || content.equals("")) {
+            return "内容を入力してください。";
+            }
+
         return "";
     }
 }

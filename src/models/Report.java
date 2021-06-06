@@ -1,4 +1,5 @@
 package models;
+
 import java.sql.Date;
 import java.sql.Timestamp;
 
@@ -14,43 +15,42 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
-
-@Table(name="reports")
+@Table(name = "reports")
 @NamedQueries({
     @NamedQuery(
-            name="getAllReports",
-            query="SELECT r FROM Report AS r ORDER BY r.id DESC"
-            ),
+        name = "getAllReports",
+        query = "SELECT r FROM Report AS r ORDER BY r.id DESC"
+    ),
     @NamedQuery(
-            name="getReportsCout",
-            query="SELECT COUNT(r) FROM Report AS r"
-            ),
+        name = "getReportsCount",
+        query = "SELECT COUNT(r) FROM Report AS r"
+    ),
 })
 @Entity
-public class Report{
+public class Report {
     @Id
-    @Column(name="id")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name="employee_id",nullable=false)
-private Employee employee;
+    @JoinColumn(name = "employee_id", nullable = false)
+    private Employee employee;
 
-    @Column(name="report_date", nullable=false)
+    @Column(name = "report_date", nullable = false)
     private Date report_date;
 
-    @Column(name="title", length=255, nullable=false)
+    @Column(name = "title", length = 255, nullable = false)
     private String title;
 
     @Lob
-    @Column(name="content",nullable=false)
+    @Column(name = "content", nullable = false)
     private String content;
 
-    @Column(name="created_at",nullable=false)
+    @Column(name = "created_at", nullable = false)
     private Timestamp created_at;
 
-    @Column(name="update_at",nullable=false)
+    @Column(name = "update_at", nullable = false)
     private Timestamp update_at;
 
     public Integer getId() {
@@ -89,7 +89,7 @@ private Employee employee;
         return content;
     }
 
-    public void setContet(String content) {
+    public void setContent(String content) {
         this.content = content;
     }
 
@@ -108,8 +108,4 @@ private Employee employee;
     public void setUpdate_at(Timestamp update_at) {
         this.update_at = update_at;
     }
-
-
-
-
-    }
+}
